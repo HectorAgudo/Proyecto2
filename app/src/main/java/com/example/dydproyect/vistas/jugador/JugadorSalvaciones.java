@@ -18,7 +18,7 @@ public class JugadorSalvaciones extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nombre);
+        setContentView(R.layout.activity_salvaciones);
 
         btnVida = findViewById(R.id.buttonVidaSal);
         btnAtributos = findViewById(R.id.buttonAtriSal);
@@ -46,7 +46,7 @@ public class JugadorSalvaciones extends AppCompatActivity {
         btnNombre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                irSalvaciones();
+                irNombre();
             }
         });
     }

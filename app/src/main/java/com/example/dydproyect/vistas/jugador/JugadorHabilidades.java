@@ -18,7 +18,7 @@ public class JugadorHabilidades extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nombre);
+        setContentView(R.layout.activity_habilidades);
 
         btnVida = findViewById(R.id.buttonVidaHabi);
         btnAtributos = findViewById(R.id.buttonAtriHabi);

@@ -155,7 +155,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline18" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/textViewNivel"
         android:layout_width="115dp"
         android:layout_height="58dp"
         android:gravity="center"
@@ -194,7 +194,7 @@
         app:layout_constraintGuide_percent="0.65" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/editTextPExp"
         android:layout_width="138dp"
         android:layout_height="41dp"
         android:ems="10"

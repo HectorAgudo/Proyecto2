@@ -18,17 +18,17 @@ public class JugadorVida extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nombre);
+        setContentView(R.layout.activity_vida);
 
         btnNombre = findViewById(R.id.buttonNombreVida);
         btnAtributos = findViewById(R.id.buttonAtriVida);
         btnHabilidades = findViewById(R.id.buttonHabilVida);
-        btnSalvaciones = findViewById(R.id.buttonSalvaVida;
+        btnSalvaciones = findViewById(R.id.buttonSalvaVida);
 
         btnNombre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                irVida();
+                irNombre();
             }
         });
         btnAtributos.setOnClickListener(new View.OnClickListener() {
