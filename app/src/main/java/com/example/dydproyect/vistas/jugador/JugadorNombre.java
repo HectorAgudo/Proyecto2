@@ -83,11 +83,6 @@ public class JugadorNombre extends AppCompatActivity {
 
 
     }
-    private void deCero(){
-        Personaje personaje = new Personaje("Introducir nombre pj","0");
-        databaseReference.child("Personaje").setValue(personaje);
-
-    }
 
 
     private void listarPj() {

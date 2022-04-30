@@ -28,6 +28,15 @@ public class Personaje {
 
     }
 
+    public Personaje(int fuerza, int destreza, int constitucion, int inteligencia, int sabiduria, int carisma) {
+        this.fuerza = fuerza;
+        this.destreza = destreza;
+        this.constitucion = constitucion;
+        this.inteligencia = inteligencia;
+        this.sabiduria = sabiduria;
+        this.carisma = carisma;
+    }
+
     public Personaje(String nombre, String exp, int nivel, String clase, String raza, int fuerza, int destreza, int constitucion, int inteligencia, int sabiduria, int carisma, String alineamiento) {
         this.nombre = nombre;
         this.exp = exp;

@@ -285,7 +285,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline9" />
 
     <EditText
-        android:id="@+id/editTextFueValor4"
+        android:id="@+id/editTextInteValor"
         android:layout_width="35dp"
         android:layout_height="47dp"
         android:ems="10"
@@ -299,7 +299,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline10" />
 
     <EditText
-        android:id="@+id/editTextFueValor6"
+        android:id="@+id/editTextCarValor"
         android:layout_width="35dp"
         android:layout_height="47dp"
         android:ems="10"
@@ -313,7 +313,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline12" />
 
     <EditText
-        android:id="@+id/editTextFueValor5"
+        android:id="@+id/editTextSabValor"
         android:layout_width="35dp"
         android:layout_height="47dp"
         android:ems="10"
@@ -334,7 +334,7 @@
         app:layout_constraintGuide_percent="0.73" />
 
     <Button
-        android:id="@+id/buttonActualizarNombre"
+        android:id="@+id/buttonActualizarAtributos"
         android:layout_width="160dp"
         android:layout_height="47dp"
         android:fontFamily="@font/fuente_dyd"
