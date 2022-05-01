@@ -1,5 +1,8 @@
 package com.example.dydproyect.entidades;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Personaje {
 
     private String nombre;
@@ -52,9 +55,11 @@ public class Personaje {
         this.alineamiento = alineamiento;
     }
 
-    public Personaje(String nombre, String exp) {
+
+    public Personaje(String nombre, String exp, int nivel) {
         this.nombre = nombre;
         this.exp = exp;
+        this.nivel = nivel;
     }
 
     public void setNombre(String nombre) {
