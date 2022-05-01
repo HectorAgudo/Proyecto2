@@ -86,6 +86,7 @@ public class JugadorNombre extends AppCompatActivity implements AdapterView.OnIt
                 irSalvaciones();
             }
         });
+
         btnActualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
