@@ -33,9 +33,11 @@ public class JugadorNombre extends AppCompatActivity implements AdapterView.OnIt
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     TextView textNivel;
-    Spinner spinerClase;
+    Spinner spinerClase, spinerRazas, spinerAlineamiento;
 
     private ArrayList<String> listaClases = new ArrayList<>();
+    private ArrayList<String> listaRazas = new ArrayList<>();
+    private ArrayList<String> listaAlineamientos = new ArrayList<>();
 
 
     @Override
@@ -54,10 +56,15 @@ public class JugadorNombre extends AppCompatActivity implements AdapterView.OnIt
         btnHabilidades = findViewById(R.id.buttonHabiNom);
         btnSalvaciones = findViewById(R.id.buttonSalvaNom);
         btnActualizar = findViewById(R.id.buttonActuNombre);
-        spinerClase = findViewById(R.id.spinnerClase);
+        spinerClase = (Spinner) findViewById(R.id.spinnerClase);
+        spinerRazas = (Spinner) findViewById(R.id.spinnerRazas);
+        spinerAlineamiento = (Spinner) findViewById(R.id.spinnerAlineamiento);
         agregarClases();
+        agregarRazas();
+        agregarAlineamiento();
         seleccionarClase();
-
+        seleccionarRaza();
+        seleccionarAlineamiento();
         inicializarFirebase();
         //deCero();
         listarPj();
@@ -90,14 +97,20 @@ public class JugadorNombre extends AppCompatActivity implements AdapterView.OnIt
         btnActualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 int nivel = calcularNivel(Integer.parseInt(editPuntosExp.getText().toString()));
                 String nombre = editNombre.getText().toString();
-                String pExp =editPuntosExp.getText().toString();
-
+                String pExp = editPuntosExp.getText().toString();
+                String claseElegida = (String) spinerClase.getSelectedItem();
+                String razaElegida = (String) spinerRazas.getSelectedItem();
+                String alinemientoElegido = (String) spinerAlineamiento.getSelectedItem();
                 HashMap map = new HashMap();
                 map.put("nombre", nombre);
                 map.put("exp", pExp);
                 map.put("nivel",nivel);
+                map.put("clase", claseElegida);
+                map.put("raza", razaElegida);
+                map.put("alineamiento", alinemientoElegido);
                 databaseReference.child("Personaje").updateChildren(map);
             }
         });
@@ -115,6 +128,8 @@ public class JugadorNombre extends AppCompatActivity implements AdapterView.OnIt
                     editPuntosExp.setText(exp);
                     String nivel = snapshot.child("nivel").getValue().toString();
                     textNivel.setText(nivel);
+                    String clase = snapshot.child("clase").getValue().toString();
+                    spinerClase.setSelection();
 
                 }
 
@@ -211,6 +226,49 @@ public class JugadorNombre extends AppCompatActivity implements AdapterView.OnIt
         listaClases.add("Paladin");
         listaClases.add("Picaro");
     }
+    private void agregarRazas(){
+        listaRazas.add("Enano");
+        listaRazas.add("Elfo");
+        listaRazas.add("Drow");
+        listaRazas.add("Mediano");
+        listaRazas.add("Humano");
+        listaRazas.add("Draconido");
+        listaRazas.add("Gnomo");
+        listaRazas.add("Semielfo");
+        listaRazas.add("Semiorco");
+        listaRazas.add("Tiefling");
+
+    }
+    private void agregarAlineamiento(){
+        listaAlineamientos.add("Legal Bueno");
+        listaAlineamientos.add("Legal Neutral");
+        listaAlineamientos.add("Legal Malvado");
+        listaAlineamientos.add("Neutral Bueno");
+        listaAlineamientos.add("Neutral");
+        listaAlineamientos.add("Neutral Malvado");
+        listaAlineamientos.add("Caotico Bueno");
+        listaAlineamientos.add("Caotico Neutral");
+        listaAlineamientos.add("Caotico Maligno");
+
+    }
+    private void seleccionarAlineamiento(){
+
+        spinerAlineamiento.setOnItemSelectedListener(this);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, listaAlineamientos);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinerAlineamiento.setAdapter(adapter);
+
+    }
+
+    private void seleccionarRaza(){
+
+        spinerRazas.setOnItemSelectedListener(this);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, listaRazas);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinerRazas.setAdapter(adapter);
+
+    }
+
     private void seleccionarClase(){
 
         spinerClase.setOnItemSelectedListener(this);
@@ -220,16 +278,9 @@ public class JugadorNombre extends AppCompatActivity implements AdapterView.OnIt
 
     }
 
+
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        adapterView.getSelectedItem();
-        switch (adapterView.getId()){
-            case  R.id.spinnerClase:
-                adapterView.getSelectedItem().toString();
-                break;
-            default:
-                break;
-        }
 
     }
 
@@ -237,6 +288,4 @@ public class JugadorNombre extends AppCompatActivity implements AdapterView.OnIt
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
-
-
 }

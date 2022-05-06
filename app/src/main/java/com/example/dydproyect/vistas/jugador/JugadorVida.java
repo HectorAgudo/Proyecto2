@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,6 +20,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.HashMap;
+
 public class JugadorVida extends AppCompatActivity {
 
     Button btnActualizar, btnNombre, btnAtributos, btnHabilidades, btnSalvaciones;
@@ -26,6 +29,7 @@ public class JugadorVida extends AppCompatActivity {
     TextView textIniciativa, textBonCom;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
+    Switch switchInspiracion;
 
 
     @Override
@@ -39,6 +43,7 @@ public class JugadorVida extends AppCompatActivity {
         btnAtributos = findViewById(R.id.buttonAtriVida);
         btnHabilidades = findViewById(R.id.buttonHabilVida);
         btnSalvaciones = findViewById(R.id.buttonSalvaVida);
+        btnActualizar = findViewById(R.id.buttonActuVida);
 
         editVidaMax = findViewById(R.id.editTextVidaMax);
         editVidaActual = findViewById(R.id.editTextVidaActual);
@@ -47,6 +52,8 @@ public class JugadorVida extends AppCompatActivity {
 
         textIniciativa = findViewById(R.id.textViewIniciativa);
         textBonCom = findViewById(R.id.textViewBonCom);
+
+        switchInspiracion = findViewById(R.id.switchInspiracion);
 
         listarVida();
 
@@ -74,6 +81,23 @@ public class JugadorVida extends AppCompatActivity {
                 irSalvaciones();
             }
         });
+        btnActualizar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int vidaMax = Integer.parseInt((editVidaMax.getText().toString()));
+                int vidaActual = Integer.parseInt((editVidaActual.getText().toString()));
+                int claseArmadura = Integer.parseInt((editCA.getText().toString()));
+                int velocidad = Integer.parseInt((editVelocidad.getText().toString()));
+                //boolean inspiracion = switchInspiracion
+                HashMap map = new HashMap();
+                map.put("vidaMax", vidaMax);
+                map.put("vidaaActu", vidaActual);
+                map.put("CA", claseArmadura);
+                map.put("velocidad", velocidad);
+                databaseReference.child("Personaje").child("vida").updateChildren(map);
+            }
+        });
+
     }
 
     private void irAtributos(){
@@ -99,7 +123,7 @@ public class JugadorVida extends AppCompatActivity {
         databaseReference = firebaseDatabase.getReference();
     }
 
-    public static String calcularBonCom(int nivel){
+    public static int calcularBonCom(int nivel){
         int bonCom = 0;
         if (nivel >=1 && nivel <=4){
             bonCom = 2;
@@ -112,7 +136,7 @@ public class JugadorVida extends AppCompatActivity {
         }else if(nivel >=17 && nivel <=20){
             bonCom = 6;
         }
-        return "+" + bonCom;
+        return bonCom;
     }
 
     private void listarVida(){
@@ -120,8 +144,8 @@ public class JugadorVida extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
-                    String bonCom = calcularBonCom(Integer.parseInt(snapshot.child("nivel").getValue().toString()));
-                    textBonCom.setText(bonCom);
+                    int bonCom = calcularBonCom(Integer.parseInt(snapshot.child("nivel").getValue().toString()));
+                    textBonCom.setText("+"+bonCom);
 
                 }
 
@@ -136,8 +160,8 @@ public class JugadorVida extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
-                    String iniciativaValor = JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("destreza").getValue().toString()));
-                    textIniciativa.setText(iniciativaValor);
+                    int iniciativaValor = JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("destreza").getValue().toString()));
+                    textIniciativa.setText(iniciativaValor+"'");
                 }
 
             }

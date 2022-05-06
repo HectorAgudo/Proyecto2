@@ -119,24 +119,24 @@ public class JugadorAtributos  extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
-                    String modFue = calcularModificador(Integer.parseInt(snapshot.child("fuerza").getValue().toString()));
+                    int modFue = calcularModificador(Integer.parseInt(snapshot.child("fuerza").getValue().toString()));
                     editFuerza.setText(snapshot.child("fuerza").getValue().toString());
-                    modFuerza.setText(modFue);
-                    String modDes = calcularModificador(Integer.parseInt(snapshot.child("destreza").getValue().toString()));
+                    modFuerza.setText("+" + modFue);
+                    int modDes = calcularModificador(Integer.parseInt(snapshot.child("destreza").getValue().toString()));
                     editDestreza.setText(snapshot.child("destreza").getValue().toString());
-                    modDestreza.setText(modDes);
-                    String modCon = calcularModificador(Integer.parseInt(snapshot.child("constitucion").getValue().toString()));
+                    modDestreza.setText("+" + modDes);
+                    int modCon = calcularModificador(Integer.parseInt(snapshot.child("constitucion").getValue().toString()));
                     editConstitucion.setText(snapshot.child("constitucion").getValue().toString());
-                    modConstitucion.setText(modCon);
-                    String modInt = calcularModificador(Integer.parseInt(snapshot.child("inteligencia").getValue().toString()));
+                    modConstitucion.setText("+" + modCon);
+                    int modInt = calcularModificador(Integer.parseInt(snapshot.child("inteligencia").getValue().toString()));
                     editInteligencia.setText(snapshot.child("inteligencia").getValue().toString());
-                    modInteligencia.setText(modInt);
-                    String modSab = calcularModificador(Integer.parseInt(snapshot.child("sabiduria").getValue().toString()));
+                    modInteligencia.setText("+" + modInt);
+                    int modSab = calcularModificador(Integer.parseInt(snapshot.child("sabiduria").getValue().toString()));
                     editSabiduria.setText(snapshot.child("sabiduria").getValue().toString());
-                    modSabiduria.setText(modSab);
-                    String modCar = calcularModificador(Integer.parseInt(snapshot.child("carisma").getValue().toString()));
+                    modSabiduria.setText("+" + modSab);
+                    int modCar = calcularModificador(Integer.parseInt(snapshot.child("carisma").getValue().toString()));
                     editCarisma.setText(snapshot.child("carisma").getValue().toString());
-                    modCarisma.setText(modCar);
+                    modCarisma.setText("+" + modCar);
                 }
             }
 
@@ -148,7 +148,7 @@ public class JugadorAtributos  extends AppCompatActivity {
 
     }
 
-    public static String calcularModificador(int valor){
+    public static int calcularModificador(int valor){
         int modificador = 0;
         if(valor == 1){
             modificador = -5;
@@ -175,7 +175,7 @@ public class JugadorAtributos  extends AppCompatActivity {
         }else if (valor == 22 || valor ==23){
             modificador = 6;
         }
-        return "+" + modificador;
+        return modificador;
     }
 
     private void inicializarFirebase() {

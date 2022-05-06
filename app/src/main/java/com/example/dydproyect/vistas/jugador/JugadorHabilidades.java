@@ -113,24 +113,24 @@ public class JugadorHabilidades extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
-                    textAcr.setText(JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("destreza").getValue().toString())));
-                    textAtle.setText(JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("fuerza").getValue().toString())));
-                    textCArca.setText(JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("inteligencia").getValue().toString())));
-                    textEnga.setText(JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("carisma").getValue().toString())));
-                    textHisto.setText(JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("inteligencia").getValue().toString())));
-                    textInter.setText(JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("carisma").getValue().toString())));
-                    textIntimi.setText(JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("carisma").getValue().toString())));
-                    textInves.setText(JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("inteligencia").getValue().toString())));
-                    textJueM.setText(JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("destreza").getValue().toString())));
-                    textMedicina.setText(JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("sabiduria").getValue().toString())));
-                    textNatu.setText(JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("inteligencia").getValue().toString())));
-                    textPerc.setText(JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("sabiduria").getValue().toString())));
-                    textPers.setText(JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("sabiduria").getValue().toString())));
-                    textPersu.setText(JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("carisma").getValue().toString())));
-                    textRel.setText(JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("inteligencia").getValue().toString())));
-                    textSigi.setText(JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("destreza").getValue().toString())));
-                    textSuper.setText(JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("sabiduria").getValue().toString())));
-                    textTAm.setText(JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("sabiduria").getValue().toString())));
+                    textAcr.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("destreza").getValue().toString())));
+                    textAtle.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("fuerza").getValue().toString())));
+                    textCArca.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("inteligencia").getValue().toString())));
+                    textEnga.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("carisma").getValue().toString())));
+                    textHisto.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("inteligencia").getValue().toString())));
+                    textInter.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("carisma").getValue().toString())));
+                    textIntimi.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("carisma").getValue().toString())));
+                    textInves.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("inteligencia").getValue().toString())));
+                    textJueM.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("destreza").getValue().toString())));
+                    textMedicina.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("sabiduria").getValue().toString())));
+                    textNatu.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("inteligencia").getValue().toString())));
+                    textPerc.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("sabiduria").getValue().toString())));
+                    textPers.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("sabiduria").getValue().toString())));
+                    textPersu.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("carisma").getValue().toString())));
+                    textRel.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("inteligencia").getValue().toString())));
+                    textSigi.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("destreza").getValue().toString())));
+                    textSuper.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("sabiduria").getValue().toString())));
+                    textTAm.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("sabiduria").getValue().toString())));
 
                 }
             }
