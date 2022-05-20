@@ -109,28 +109,109 @@ public class JugadorHabilidades extends AppCompatActivity {
     }
 
     void listarHabilidades(){
-        databaseReference.child("Personaje").child("Atributos").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("Personaje").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
-                    textAcr.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("destreza").getValue().toString())));
-                    textAtle.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("fuerza").getValue().toString())));
-                    textCArca.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("inteligencia").getValue().toString())));
-                    textEnga.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("carisma").getValue().toString())));
-                    textHisto.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("inteligencia").getValue().toString())));
-                    textInter.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("carisma").getValue().toString())));
-                    textIntimi.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("carisma").getValue().toString())));
-                    textInves.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("inteligencia").getValue().toString())));
-                    textJueM.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("destreza").getValue().toString())));
-                    textMedicina.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("sabiduria").getValue().toString())));
-                    textNatu.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("inteligencia").getValue().toString())));
-                    textPerc.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("sabiduria").getValue().toString())));
-                    textPers.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("sabiduria").getValue().toString())));
-                    textPersu.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("carisma").getValue().toString())));
-                    textRel.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("inteligencia").getValue().toString())));
-                    textSigi.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("destreza").getValue().toString())));
-                    textSuper.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("sabiduria").getValue().toString())));
-                    textTAm.setText("+"+ JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("sabiduria").getValue().toString())));
+                    String claseElegida = snapshot.child("clase").getValue().toString();
+                    int bonCom = JugadorVida.calcularBonCom(Integer.parseInt(snapshot.child("nivel").getValue().toString()));
+                    int bonFuerza = JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("Atributos").child("fuerza").getValue().toString()));
+                    int bonDestreza = JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("Atributos").child("destreza").getValue().toString()));
+                    int bonConstitucion = JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("Atributos").child("constitucion").getValue().toString()));
+                    int bonInteligencia = JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("Atributos").child("inteligencia").getValue().toString()));
+                    int bonSabiduria = JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("Atributos").child("sabiduria").getValue().toString()));
+                    int bonCarisma = JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("Atributos").child("carisma").getValue().toString()));
+
+                    if (claseElegida.equals("Picaro") || claseElegida.equals("Monje")){
+                        textAcr.setText("+" +(bonDestreza+bonCom));
+                    } else {
+                        textAcr.setText("+" + bonDestreza);
+                    }
+                    if (claseElegida.equals("Guerrero") || claseElegida.equals("Monje") || claseElegida.equals("Paladin") || claseElegida.equals("Barbaro")){
+                        textAtle.setText("+" +(bonFuerza+bonCom));
+                    } else {
+                        textAtle.setText("+" + bonFuerza);
+                    }
+                    if (claseElegida.equals("Mago") || claseElegida.equals("Brujo") || claseElegida.equals("Hechicero")){
+                        textCArca.setText("+" +(bonInteligencia+bonCom));
+                    } else {
+                        textCArca.setText("+" + bonInteligencia);
+                    }
+                    if (claseElegida.equals("Bardo") || claseElegida.equals("Picaro")){
+                        textEnga.setText("+" +(bonCarisma+bonCom));
+                    } else {
+                        textEnga.setText("+" + bonCarisma);
+                    }
+                    if (claseElegida.equals("Bardo") || claseElegida.equals("Mago") || claseElegida.equals("Hechicero")){
+                        textHisto.setText("+" +(bonInteligencia+bonCom));
+                    } else {
+                        textHisto.setText("+" + bonInteligencia);
+                    }
+                    if (claseElegida.equals("Picaro") || claseElegida.equals("Bardo")){
+                        textInter.setText("+" +(bonCarisma+bonCom));
+                    } else {
+                        textInter.setText("+" + bonCarisma);
+                    }
+                    if (claseElegida.equals("Guerrero") || claseElegida.equals("Monje") || claseElegida.equals("Barbaro")){
+                        textIntimi.setText("+" +(bonCarisma+bonCom));
+                    } else {
+                        textIntimi.setText("+" + bonCarisma);
+                    }
+                    if (claseElegida.equals("Bardo") || claseElegida.equals("Mago") || claseElegida.equals("Brujo")){
+                        textInves.setText("+" +(bonInteligencia+bonCom));
+                    } else {
+                        textInves.setText("+" + bonInteligencia);
+                    }
+                    if (claseElegida.equals("Picaro") || claseElegida.equals("Monje")){
+                        textJueM.setText("+" +(bonDestreza+bonCom));
+                    } else {
+                        textJueM.setText("+" + bonDestreza);
+                    }
+                    if (claseElegida.equals("Clerigo") || claseElegida.equals("Paladin")){
+                        textMedicina.setText("+" +(bonSabiduria+bonCom));
+                    } else {
+                        textMedicina.setText("+" + bonSabiduria);
+                    }
+                    if (claseElegida.equals("Explorador") || claseElegida.equals("Barbaro") || claseElegida.equals("Explorador")){
+                        textNatu.setText("+" +(bonInteligencia+bonCom));
+                    } else {
+                        textNatu.setText("+" + bonInteligencia);
+                    }
+                    if (claseElegida.equals("Explorador") || claseElegida.equals("Monje")){
+                        textPerc.setText("+" +(bonSabiduria+bonCom));
+                    } else {
+                        textPerc.setText("+" + bonSabiduria);
+                    }
+                    if (claseElegida.equals("Bardo") || claseElegida.equals("Picaro")){
+                        textPers.setText("+" +(bonSabiduria+bonCom));
+                    } else {
+                        textPers.setText("+" + bonSabiduria);
+                    }
+                    if (claseElegida.equals("Bardo") || claseElegida.equals("Brujo")){
+                        textPersu.setText("+" +(bonCarisma+bonCom));
+                    } else {
+                        textPersu.setText("+" + bonCarisma);
+                    }
+                    if (claseElegida.equals("Clerigo") || claseElegida.equals("Paladin")){
+                        textRel.setText("+" +(bonInteligencia+bonCom));
+                    } else {
+                        textRel.setText("+" + bonInteligencia);
+                    }
+                    if (claseElegida.equals("Picaro") || claseElegida.equals("Explorador")){
+                        textSigi.setText("+" +(bonDestreza+bonCom));
+                    } else {
+                        textSigi.setText("+" + bonDestreza);
+                    }
+                    if (claseElegida.equals("Barbaro") || claseElegida.equals("Explorador")|| claseElegida.equals("Druida")){
+                        textSuper.setText("+" +(bonSabiduria+bonCom));
+                    } else {
+                        textSuper.setText("+" + bonSabiduria);
+                    }
+                    if (claseElegida.equals("Explorador") || claseElegida.equals("Druida")){
+                        textTAm.setText("+" +(bonSabiduria+bonCom));
+                    } else {
+                        textTAm.setText("+" + bonSabiduria);
+                    }
 
                 }
             }

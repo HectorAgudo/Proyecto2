@@ -3,5 +3,5 @@
     <font
         android:fontStyle="normal"
         android:fontWeight="400"
-        android:font="@font/daelands" />
+        android:font="@font/dalelandsuncialbold" />
 </font-family>

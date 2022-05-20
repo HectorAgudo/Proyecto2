@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/imagenlucha">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline57"
@@ -88,6 +89,7 @@
         android:fontFamily="@font/fuente_dyd"
         android:text="Actualizar"
         android:textSize="12sp"
+        android:backgroundTint="@color/rojodyd"
         app:layout_constraintBottom_toTopOf="@+id/guideline66"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline65"
@@ -255,6 +257,7 @@
         android:layout_height="66dp"
         android:fontFamily="@font/fuente_dyd"
         android:text="Nombre"
+        android:backgroundTint="@color/rojodyd"
         app:layout_constraintBottom_toTopOf="@+id/guideline58"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline64"
@@ -266,6 +269,7 @@
         android:layout_height="66dp"
         android:fontFamily="@font/fuente_dyd"
         android:text="Habilidades"
+        android:backgroundTint="@color/rojodyd"
         app:layout_constraintBottom_toTopOf="@+id/guideline59"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline64"
@@ -277,6 +281,7 @@
         android:layout_height="66dp"
         android:fontFamily="@font/fuente_dyd"
         android:text="Atributos"
+        android:backgroundTint="@color/rojodyd"
         app:layout_constraintBottom_toTopOf="@+id/guideline60"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline64"
@@ -289,6 +294,7 @@
         android:layout_marginTop="4dp"
         android:fontFamily="@font/fuente_dyd"
         android:text="Salvaciones"
+        android:backgroundTint="@color/rojodyd"
         app:layout_constraintBottom_toTopOf="@+id/guideline61"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline64"
@@ -300,6 +306,7 @@
         android:layout_height="66dp"
         android:fontFamily="@font/fuente_dyd"
         android:text="Ataque"
+        android:backgroundTint="@color/rojodyd"
         app:layout_constraintBottom_toTopOf="@+id/guideline62"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline64"

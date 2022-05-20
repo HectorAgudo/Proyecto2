@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/imagenmago">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline25"
@@ -249,6 +250,7 @@
         android:layout_height="66dp"
         android:fontFamily="@font/fuente_dyd"
         android:text="Nombre"
+        android:backgroundTint="@color/rojodyd"
         app:layout_constraintBottom_toTopOf="@+id/guideline28"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline25"
@@ -260,6 +262,7 @@
         android:layout_height="66dp"
         android:fontFamily="@font/fuente_dyd"
         android:text="Atributos"
+        android:backgroundTint="@color/rojodyd"
         app:layout_constraintBottom_toTopOf="@+id/guideline29"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline25"
@@ -271,6 +274,7 @@
         android:layout_height="66dp"
         android:fontFamily="@font/fuente_dyd"
         android:text="Vida"
+        android:backgroundTint="@color/rojodyd"
         app:layout_constraintBottom_toTopOf="@+id/guideline30"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline25"
@@ -282,6 +286,7 @@
         android:layout_height="66dp"
         android:fontFamily="@font/fuente_dyd"
         android:text="Habilidades"
+        android:backgroundTint="@color/rojodyd"
         app:layout_constraintBottom_toTopOf="@+id/guideline31"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline25"
@@ -293,6 +298,7 @@
         android:layout_height="66dp"
         android:fontFamily="@font/fuente_dyd"
         android:text="Ataque"
+        android:backgroundTint="@color/rojodyd"
         app:layout_constraintBottom_toTopOf="@+id/guideline32"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline25"

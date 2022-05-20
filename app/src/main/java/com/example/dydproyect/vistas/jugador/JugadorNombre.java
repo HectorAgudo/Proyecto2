@@ -129,7 +129,12 @@ public class JugadorNombre extends AppCompatActivity implements AdapterView.OnIt
                     String nivel = snapshot.child("nivel").getValue().toString();
                     textNivel.setText(nivel);
                     String clase = snapshot.child("clase").getValue().toString();
-                    spinerClase.setSelection();
+                    int posicionSpinner = listaClases.indexOf(clase);
+                    spinerClase.setSelection(posicionSpinner);
+                    String raza = snapshot.child("raza").getValue().toString();
+                    spinerRazas.setSelection(listaRazas.indexOf(raza));
+                    String alineamiento = snapshot.child("alineamiento").getValue().toString();
+                    spinerAlineamiento.setSelection(listaAlineamientos.indexOf(alineamiento));
 
                 }
 
@@ -251,6 +256,7 @@ public class JugadorNombre extends AppCompatActivity implements AdapterView.OnIt
         listaAlineamientos.add("Caotico Maligno");
 
     }
+
     private void seleccionarAlineamiento(){
 
         spinerAlineamiento.setOnItemSelectedListener(this);
@@ -277,7 +283,6 @@ public class JugadorNombre extends AppCompatActivity implements AdapterView.OnIt
         spinerClase.setAdapter(adapter);
 
     }
-
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
