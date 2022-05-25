@@ -14,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.dydproyect.R;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -30,12 +32,15 @@ public class JugadorVida extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     Switch switchInspiracion;
-
+    FirebaseAuth mAuth;
+    FirebaseUser user = mAuth.getInstance().getCurrentUser();
+    String uid = user.getUid();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vida);
+        setTitle("Vida");
 
         inicializarFirebase();
 
@@ -94,7 +99,7 @@ public class JugadorVida extends AppCompatActivity {
                 map.put("vidaaActu", vidaActual);
                 map.put("CA", claseArmadura);
                 map.put("velocidad", velocidad);
-                databaseReference.child("Personaje").child("vida").updateChildren(map);
+                databaseReference.child('"'+String.valueOf(uid)+'"').child("Personaje").child("vida").updateChildren(map);
             }
         });
 
@@ -140,7 +145,7 @@ public class JugadorVida extends AppCompatActivity {
     }
 
     private void listarVida(){
-        databaseReference.child("Personaje").addValueEventListener(new ValueEventListener() {
+        databaseReference.child('"'+String.valueOf(uid)+'"').child("Personaje").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){

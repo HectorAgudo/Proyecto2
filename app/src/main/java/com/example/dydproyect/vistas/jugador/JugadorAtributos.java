@@ -17,6 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.dydproyect.R;
 import com.example.dydproyect.entidades.Personaje;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -33,7 +35,9 @@ public class JugadorAtributos  extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     TextView modFuerza, modDestreza, modConstitucion, modInteligencia, modSabiduria, modCarisma;
-
+    FirebaseAuth mAuth;
+    FirebaseUser user = mAuth.getInstance().getCurrentUser();
+    String uid = user.getUid();
 
 
 
@@ -41,6 +45,7 @@ public class JugadorAtributos  extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atributos);
+        setTitle("Atributos");
 
         inicializarFirebase();
         listarModificadores();
@@ -105,7 +110,7 @@ public class JugadorAtributos  extends AppCompatActivity {
                 map.put("inteligencia",inteligencia);
                 map.put("sabiduria",sabiduria);
                 map.put("carisma",carisma);
-                databaseReference.child("Personaje").child("Atributos").updateChildren(map);
+                databaseReference.child('"'+String.valueOf(uid)+'"').child("Personaje").child("Atributos").updateChildren(map);
 
             }
         });
@@ -115,7 +120,7 @@ public class JugadorAtributos  extends AppCompatActivity {
 
 
     private void listarModificadores(){
-        databaseReference.child("Personaje").child("Atributos").addValueEventListener(new ValueEventListener() {
+        databaseReference.child('"'+String.valueOf(uid)+'"').child("Personaje").child("Atributos").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){

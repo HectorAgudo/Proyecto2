@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.dydproyect.R;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,12 +26,15 @@ public class JugadorSalvaciones extends AppCompatActivity {
     TextView salFue, salDes,salCon, salInt, salSab, salCar;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
-
+    FirebaseAuth mAuth;
+    FirebaseUser user = mAuth.getInstance().getCurrentUser();
+    String uid = user.getUid();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_salvaciones);
+        setTitle("Salvaciones");
 
         inicializarFirebase();
 
@@ -96,7 +101,7 @@ public class JugadorSalvaciones extends AppCompatActivity {
     }
 
     private void listarSalvaciones(){
-        databaseReference.child("Personaje").addValueEventListener(new ValueEventListener() {
+        databaseReference.child('"'+String.valueOf(uid)+'"').child("Personaje").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String claseElegida = snapshot.child("clase").getValue().toString();

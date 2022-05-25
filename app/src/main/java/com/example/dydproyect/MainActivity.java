@@ -20,7 +20,7 @@ import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnJugador, btnMaster, btnLogOut;
+    Button btnJugador, btnLogOut;
     FirebaseAuth mAuth;
 
     @Override
@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnJugador= findViewById(R.id.buttonJugador);
+        btnLogOut = findViewById(R.id.buttonLogOut);
         mAuth = FirebaseAuth.getInstance();
 
 
@@ -37,6 +38,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 irJugadorNombre();
 
+            }
+        });
+        btnLogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mAuth.signOut();
+                startActivity(new Intent(MainActivity.this,Logeo.class));
             }
         });
     }

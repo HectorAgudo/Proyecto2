@@ -17,6 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.dydproyect.R;
 import com.example.dydproyect.entidades.Personaje;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -34,7 +36,9 @@ public class JugadorNombre extends AppCompatActivity implements AdapterView.OnIt
     DatabaseReference databaseReference;
     TextView textNivel;
     Spinner spinerClase, spinerRazas, spinerAlineamiento;
-
+    FirebaseAuth mAuth;
+    FirebaseUser user = mAuth.getInstance().getCurrentUser();
+    String uid = user.getUid();
     private ArrayList<String> listaClases = new ArrayList<>();
     private ArrayList<String> listaRazas = new ArrayList<>();
     private ArrayList<String> listaAlineamientos = new ArrayList<>();
@@ -44,6 +48,7 @@ public class JugadorNombre extends AppCompatActivity implements AdapterView.OnIt
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nombre);
+        setTitle("Nombre y Clase");
 
 
 
@@ -59,6 +64,8 @@ public class JugadorNombre extends AppCompatActivity implements AdapterView.OnIt
         spinerClase = (Spinner) findViewById(R.id.spinnerClase);
         spinerRazas = (Spinner) findViewById(R.id.spinnerRazas);
         spinerAlineamiento = (Spinner) findViewById(R.id.spinnerAlineamiento);
+
+
         agregarClases();
         agregarRazas();
         agregarAlineamiento();
@@ -111,14 +118,14 @@ public class JugadorNombre extends AppCompatActivity implements AdapterView.OnIt
                 map.put("clase", claseElegida);
                 map.put("raza", razaElegida);
                 map.put("alineamiento", alinemientoElegido);
-                databaseReference.child("Personaje").updateChildren(map);
+                databaseReference.child('"'+String.valueOf(uid)+'"').child("Personaje").updateChildren(map);
             }
         });
 
     }
 
     private void listarPj() {
-        databaseReference.child("Personaje").addValueEventListener(new ValueEventListener() {
+        databaseReference.child('"'+String.valueOf(uid)+'"').child("Personaje").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){

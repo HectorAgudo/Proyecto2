@@ -199,7 +199,7 @@
         android:layout_width="138dp"
         android:layout_height="41dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:text="0"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline24"
