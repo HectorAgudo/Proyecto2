@@ -9,15 +9,19 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.dydproyect.firebase.Logeo;
 import com.example.dydproyect.vistas.jugador.JugadorNombre;
 import com.google.android.gms.signin.internal.SignInClientImpl;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnJugador, btnMaster;
+    Button btnJugador, btnMaster, btnLogOut;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnJugador= findViewById(R.id.buttonJugador);
+        mAuth = FirebaseAuth.getInstance();
 
 
         btnJugador.setOnClickListener(new View.OnClickListener() {
@@ -33,10 +38,15 @@ public class MainActivity extends AppCompatActivity {
                 irJugadorNombre();
 
             }
-
         });
+    }
 
-
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user = mAuth.getCurrentUser();
+        if(user == null){
+            startActivity(new Intent(MainActivity.this, Logeo.class));
+        }
     }
 
     public void irJugadorNombre(){
