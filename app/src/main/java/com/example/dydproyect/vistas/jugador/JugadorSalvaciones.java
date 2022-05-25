@@ -86,7 +86,47 @@ public class JugadorSalvaciones extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent =new Intent(JugadorSalvaciones.this, PopupDados.class);
-                intent.putExtra("modFue", salFue.getText().toString());
+                intent.putExtra("mod", salFue.getText().toString());
+                startActivity(intent);
+            }
+        });
+        cliDes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(JugadorSalvaciones.this, PopupDados.class);
+                intent.putExtra("mod", salDes.getText().toString());
+                startActivity(intent);
+            }
+        });
+        cliCon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(JugadorSalvaciones.this, PopupDados.class);
+                intent.putExtra("mod", salCon.getText().toString());
+                startActivity(intent);
+            }
+        });
+        cliInt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(JugadorSalvaciones.this, PopupDados.class);
+                intent.putExtra("mod", salInt.getText().toString());
+                startActivity(intent);
+            }
+        });
+        cliSab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(JugadorSalvaciones.this, PopupDados.class);
+                intent.putExtra("mod", salSab.getText().toString());
+                startActivity(intent);
+            }
+        });
+        cliCar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(JugadorSalvaciones.this, PopupDados.class);
+                intent.putExtra("mod", salCar.getText().toString());
                 startActivity(intent);
             }
         });

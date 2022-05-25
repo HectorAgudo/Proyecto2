@@ -2,8 +2,11 @@ package com.example.dydproyect;
 
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.DisplayMetrics;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -14,6 +17,7 @@ public class PopupDados extends Activity {
 
     TextView textTirada;
     ImageView imgDado;
+    MediaPlayer mp;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -22,12 +26,14 @@ public class PopupDados extends Activity {
         setTitle("Tirada");
         textTirada = findViewById(R.id.textViewTirada);
         imgDado = findViewById(R.id.imageViewDado);
-        Animator set = (Animator) AnimatorInflater.loadAnimator(PopupDados.this,R.anim.flip);
+        mp = MediaPlayer.create(this,R.raw.dadostirar);
+        mp.start();
+        @SuppressLint("ResourceType") Animator set = (Animator) AnimatorInflater.loadAnimator(PopupDados.this,R.anim.flip);
         set.setTarget(imgDado);
         set.start();
         int tirada = (int) (Math.random()*(20));
         eleccionDado(tirada);
-        String bon = getIntent().getStringExtra("modFue");
+        String bon = getIntent().getStringExtra("mod");
         textTirada.setText("Tu tirada a sido de " + tirada + " y tu bonificador es de " + bon + " sumas : " + (tirada+Integer.parseInt(bon)));
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
