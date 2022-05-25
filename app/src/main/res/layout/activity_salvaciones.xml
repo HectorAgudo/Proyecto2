@@ -77,9 +77,10 @@
         app:layout_constraintGuide_begin="216dp" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/textViewClicableFuerza"
         android:layout_width="187dp"
         android:layout_height="53dp"
+        android:clickable="true"
         android:fontFamily="@font/fuente_dyd"
         android:gravity="center"
         android:text="Fuerza"
@@ -91,9 +92,10 @@
         app:layout_constraintTop_toTopOf="@+id/guideline27" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/textViewClicableDestreza"
         android:layout_width="187dp"
         android:layout_height="53dp"
+        android:clickable="true"
         android:fontFamily="@font/fuente_dyd"
         android:gravity="center"
         android:text="Destreza"
@@ -105,9 +107,10 @@
         app:layout_constraintTop_toTopOf="@+id/guideline28" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/textViewClicableConstitucion"
         android:layout_width="187dp"
         android:layout_height="53dp"
+        android:clickable="true"
         android:fontFamily="@font/fuente_dyd"
         android:gravity="center"
         android:text="Constitucion"
@@ -119,9 +122,10 @@
         app:layout_constraintTop_toTopOf="@+id/guideline29" />
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/textViewClicableInteligencia"
         android:layout_width="187dp"
         android:layout_height="53dp"
+        android:clickable="true"
         android:fontFamily="@font/fuente_dyd"
         android:gravity="center"
         android:text="Inteligencia"
@@ -133,9 +137,10 @@
         app:layout_constraintTop_toTopOf="@+id/guideline30" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/textViewClicableSabiduria"
         android:layout_width="187dp"
         android:layout_height="53dp"
+        android:clickable="true"
         android:fontFamily="@font/fuente_dyd"
         android:gravity="center"
         android:text="Sabiduria"
@@ -147,9 +152,10 @@
         app:layout_constraintTop_toTopOf="@+id/guideline31" />
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/textViewClicableCarisma"
         android:layout_width="187dp"
         android:layout_height="53dp"
+        android:clickable="true"
         android:fontFamily="@font/fuente_dyd"
         android:gravity="center"
         android:text="Carisma"

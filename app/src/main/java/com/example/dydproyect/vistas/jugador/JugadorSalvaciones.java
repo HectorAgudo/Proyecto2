@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.dydproyect.PopupDados;
 import com.example.dydproyect.R;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
@@ -23,7 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 public class JugadorSalvaciones extends AppCompatActivity {
 
     Button btnVida, btnAtributos, btnHabilidades, btnNombre;
-    TextView salFue, salDes,salCon, salInt, salSab, salCar;
+    TextView salFue, salDes,salCon, salInt, salSab, salCar, cliFue, cliDes, cliCon, cliInt, cliSab,cliCar;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     FirebaseAuth mAuth;
@@ -37,6 +38,12 @@ public class JugadorSalvaciones extends AppCompatActivity {
         setTitle("Salvaciones");
 
         inicializarFirebase();
+        cliFue = findViewById(R.id.textViewClicableFuerza);
+        cliDes = findViewById(R.id.textViewClicableDestreza);
+        cliCon = findViewById(R.id.textViewClicableConstitucion);
+        cliInt = findViewById(R.id.textViewClicableInteligencia);
+        cliSab = findViewById(R.id.textViewClicableSabiduria);
+        cliCar = findViewById(R.id.textViewClicableCarisma);
 
         salFue = findViewById(R.id.textViewFuerSal);
         salDes = findViewById(R.id.textViewDesSal);
@@ -75,6 +82,15 @@ public class JugadorSalvaciones extends AppCompatActivity {
                 irNombre();
             }
         });
+        cliFue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(JugadorSalvaciones.this, PopupDados.class);
+                intent.putExtra("modFue", salFue.getText().toString());
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void irAtributos(){
