@@ -82,6 +82,8 @@ public class JugadorSalvaciones extends AppCompatActivity {
                 irNombre();
             }
         });
+
+
         cliFue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

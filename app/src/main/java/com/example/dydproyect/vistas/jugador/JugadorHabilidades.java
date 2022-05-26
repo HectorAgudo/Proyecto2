@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.dydproyect.PopupDados;
 import com.example.dydproyect.R;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,6 +25,7 @@ public class JugadorHabilidades extends AppCompatActivity {
 
     Button btnVida, btnAtributos, btnNombre, btnSalvaciones;
     TextView textAcr, textAtle, textCArca, textEnga, textHisto, textInter, textIntimi,textInves, textJueM, textMedicina, textNatu, textPerc, textPers, textPersu, textRel, textSigi, textSuper, textTAm;
+    TextView cliAcr, cliAtle, cliCArca, cliEnga, cliHisto, cliInter, cliIntimi, cliInves, cliJueM, cliMedic, cliNatu, cliPerc, cliPers, cliPersu, cliRel, cliSigil, cliSuper, cliTAm;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     FirebaseAuth mAuth;
@@ -44,24 +46,9 @@ public class JugadorHabilidades extends AppCompatActivity {
         btnNombre = findViewById(R.id.buttonNomHabi);
         btnSalvaciones = findViewById(R.id.buttonSalvaHabi);
 
-        textAcr = findViewById(R.id.textViewAcrobacias);
-        textAtle = findViewById(R.id.textViewAtletismo);
-        textCArca = findViewById(R.id.textViewCArcano);
-        textEnga = findViewById(R.id.textViewEngaño);
-        textHisto = findViewById(R.id.textViewHistoria);
-        textInter = findViewById(R.id.textViewIntrepetacion);
-        textIntimi = findViewById(R.id.textViewIntimidacion);
-        textInves = findViewById(R.id.textViewInvestigacion);
-        textJueM = findViewById(R.id.textViewJManos);
-        textMedicina = findViewById(R.id.textViewMedicina);
-        textNatu = findViewById(R.id.textViewNaturaleza);
-        textPerc = findViewById(R.id.textViewPercepcion);
-        textPers = findViewById(R.id.textViewPerspicacia);
-        textPersu = findViewById(R.id.textViewPersuasion);
-        textRel = findViewById(R.id.textViewReligion);
-        textSigi = findViewById(R.id.textViewSigilo);
-        textSuper = findViewById(R.id.textViewSupervivencia);
-        textTAm = findViewById(R.id.textViewTAnimales);
+        paqueteTextos();
+        paqueteClicables();
+
 
         listarHabilidades();
 
@@ -89,6 +76,17 @@ public class JugadorHabilidades extends AppCompatActivity {
                 irSalvaciones();
             }
         });
+
+        cliAcr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+                intent.putExtra("mod", textAcr.getText().toString());
+                startActivity(intent);
+            }
+        });
+
+
     }
 
     private void inicializarFirebase() {
@@ -229,6 +227,50 @@ public class JugadorHabilidades extends AppCompatActivity {
         });
     }
 
+    private void paqueteTextos(){
+        textAcr = findViewById(R.id.textViewAcrobacias);
+        textAtle = findViewById(R.id.textViewAtletismo);
+        textCArca = findViewById(R.id.textViewCArcano);
+        textEnga = findViewById(R.id.textViewEngaño);
+        textHisto = findViewById(R.id.textViewHistoria);
+        textInter = findViewById(R.id.textViewIntrepetacion);
+        textIntimi = findViewById(R.id.textViewIntimidacion);
+        textInves = findViewById(R.id.textViewInvestigacion);
+        textJueM = findViewById(R.id.textViewJManos);
+        textMedicina = findViewById(R.id.textViewMedicina);
+        textNatu = findViewById(R.id.textViewNaturaleza);
+        textPerc = findViewById(R.id.textViewPercepcion);
+        textPers = findViewById(R.id.textViewPerspicacia);
+        textPersu = findViewById(R.id.textViewPersuasion);
+        textRel = findViewById(R.id.textViewReligion);
+        textSigi = findViewById(R.id.textViewSigilo);
+        textSuper = findViewById(R.id.textViewSupervivencia);
+        textTAm = findViewById(R.id.textViewTAnimales);
+
+    }
+
+    private void paqueteClicables(){
+
+        cliAcr = findViewById(R.id.textViewClicAcro);
+        cliAtle = findViewById(R.id.textViewClicAcro);
+        cliCArca = findViewById(R.id.textViewClicAcro);
+        cliEnga = findViewById(R.id.textViewClicAcro);
+        cliHisto = findViewById(R.id.textViewClicAcro);
+        cliInter = findViewById(R.id.textViewClicAcro);
+        cliIntimi = findViewById(R.id.textViewClicAcro);
+        cliInves = findViewById(R.id.textViewClicAcro);
+        cliJueM = findViewById(R.id.textViewClicAcro);
+        cliMedic = findViewById(R.id.textViewClicAcro);
+        cliNatu = findViewById(R.id.textViewClicAcro);
+        cliPerc = findViewById(R.id.textViewClicAcro);
+        cliPers = findViewById(R.id.textViewClicAcro);
+        cliPersu = findViewById(R.id.textViewClicAcro);
+        cliRel = findViewById(R.id.textViewClicAcro);
+        cliSigil = findViewById(R.id.textViewClicAcro);
+        cliSuper = findViewById(R.id.textViewClicAcro);
+        cliTAm = findViewById(R.id.textViewClicAcro);
+
+    }
 
 
 

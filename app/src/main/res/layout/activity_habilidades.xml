@@ -126,10 +126,11 @@
         app:layout_constraintGuide_percent="0.85" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/textViewClicAcro"
         android:layout_width="193dp"
         android:layout_height="21dp"
         android:alpha="1"
+        android:clickable="true"
         android:fontFamily="@font/fuente_dyd"
         android:gravity="center"
         android:text="Acrobacias (Des)"
@@ -141,9 +142,10 @@
         app:layout_constraintTop_toTopOf="@+id/guideline36" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/textViewClicAtle"
         android:layout_width="193dp"
         android:layout_height="21dp"
+        android:clickable="true"
         android:fontFamily="@font/fuente_dyd"
         android:gravity="center"
         android:text="Atletismo (Fue)"
@@ -155,9 +157,10 @@
         app:layout_constraintTop_toTopOf="@+id/guideline37" />
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/textViewClicCArc"
         android:layout_width="193dp"
         android:layout_height="21dp"
+        android:clickable="true"
         android:fontFamily="@font/fuente_dyd"
         android:gravity="center"
         android:text="C.Arcano (Int)"
@@ -169,9 +172,10 @@
         app:layout_constraintTop_toTopOf="@+id/guideline38" />
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/textViewClicEnga"
         android:layout_width="193dp"
         android:layout_height="21dp"
+        android:clickable="true"
         android:fontFamily="@font/fuente_dyd"
         android:gravity="center"
         android:text="Engaño (Car)"
@@ -183,9 +187,10 @@
         app:layout_constraintTop_toTopOf="@+id/guideline39" />
 
     <TextView
-        android:id="@+id/textView23"
+        android:id="@+id/textViewClicHisto"
         android:layout_width="193dp"
         android:layout_height="21dp"
+        android:clickable="true"
         android:fontFamily="@font/fuente_dyd"
         android:gravity="center"
         android:text="Historia (Int)"
@@ -197,12 +202,13 @@
         app:layout_constraintTop_toTopOf="@+id/guideline40" />
 
     <TextView
-        android:id="@+id/textView24"
+        android:id="@+id/textViewClicInter"
         android:layout_width="193dp"
         android:layout_height="21dp"
+        android:clickable="true"
         android:fontFamily="@font/fuente_dyd"
         android:gravity="center"
-        android:text="Intrepetacion (Car)"
+        android:text="Interpetacion (Car)"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline43"
@@ -211,9 +217,10 @@
         app:layout_constraintTop_toTopOf="@+id/guideline41" />
 
     <TextView
-        android:id="@+id/textView25"
+        android:id="@+id/textViewClicIntimi"
         android:layout_width="193dp"
         android:layout_height="21dp"
+        android:clickable="true"
         android:fontFamily="@font/fuente_dyd"
         android:gravity="center"
         android:text="Intimidacion (Car)"
@@ -225,9 +232,10 @@
         app:layout_constraintTop_toTopOf="@+id/guideline43" />
 
     <TextView
-        android:id="@+id/textView26"
+        android:id="@+id/textViewClicInves"
         android:layout_width="193dp"
         android:layout_height="21dp"
+        android:clickable="true"
         android:fontFamily="@font/fuente_dyd"
         android:gravity="center"
         android:text="Investigacion (Int)"
@@ -239,9 +247,10 @@
         app:layout_constraintTop_toTopOf="@+id/guideline42" />
 
     <TextView
-        android:id="@+id/textView27"
+        android:id="@+id/textViewClicJManos"
         android:layout_width="193dp"
         android:layout_height="21dp"
+        android:clickable="true"
         android:fontFamily="@font/fuente_dyd"
         android:gravity="center"
         android:text="Juego de Manos (Des)"
@@ -253,9 +262,10 @@
         app:layout_constraintTop_toTopOf="@+id/guideline44" />
 
     <TextView
-        android:id="@+id/textView28"
+        android:id="@+id/textViewClicMedi"
         android:layout_width="193dp"
         android:layout_height="21dp"
+        android:clickable="true"
         android:fontFamily="@font/fuente_dyd"
         android:gravity="center"
         android:text="Medicina (Sab)"
@@ -267,9 +277,10 @@
         app:layout_constraintTop_toTopOf="@+id/guideline45" />
 
     <TextView
-        android:id="@+id/textView29"
+        android:id="@+id/textViewClicNatu"
         android:layout_width="193dp"
         android:layout_height="21dp"
+        android:clickable="true"
         android:fontFamily="@font/fuente_dyd"
         android:gravity="center"
         android:text="Naturaleza (Int)"
@@ -281,9 +292,10 @@
         app:layout_constraintTop_toTopOf="@+id/guideline46" />
 
     <TextView
-        android:id="@+id/textView30"
+        android:id="@+id/textViewClicPerc"
         android:layout_width="193dp"
         android:layout_height="21dp"
+        android:clickable="true"
         android:fontFamily="@font/fuente_dyd"
         android:gravity="center"
         android:text="Percepcion(Sab)"
@@ -295,9 +307,10 @@
         app:layout_constraintTop_toTopOf="@+id/guideline47" />
 
     <TextView
-        android:id="@+id/textView31"
+        android:id="@+id/textViewClicPers"
         android:layout_width="193dp"
         android:layout_height="21dp"
+        android:clickable="true"
         android:fontFamily="@font/fuente_dyd"
         android:gravity="center"
         android:text="Perspicacia (Sab)"
@@ -309,9 +322,10 @@
         app:layout_constraintTop_toTopOf="@+id/guideline48" />
 
     <TextView
-        android:id="@+id/textView32"
+        android:id="@+id/textViewClicPersu"
         android:layout_width="193dp"
         android:layout_height="21dp"
+        android:clickable="true"
         android:fontFamily="@font/fuente_dyd"
         android:gravity="center"
         android:text="Persuasion (Car)"
@@ -323,9 +337,10 @@
         app:layout_constraintTop_toTopOf="@+id/guideline49" />
 
     <TextView
-        android:id="@+id/textView33"
+        android:id="@+id/textViewClicRel"
         android:layout_width="193dp"
         android:layout_height="21dp"
+        android:clickable="true"
         android:fontFamily="@font/fuente_dyd"
         android:gravity="center"
         android:text="Religion (Int)"
@@ -337,9 +352,10 @@
         app:layout_constraintTop_toTopOf="@+id/guideline50" />
 
     <TextView
-        android:id="@+id/textView34"
+        android:id="@+id/textViewClicSigil"
         android:layout_width="193dp"
         android:layout_height="21dp"
+        android:clickable="true"
         android:fontFamily="@font/fuente_dyd"
         android:gravity="center"
         android:text="Sigilo (Des)"
@@ -351,9 +367,10 @@
         app:layout_constraintTop_toTopOf="@+id/guideline51" />
 
     <TextView
-        android:id="@+id/textView35"
+        android:id="@+id/textViewClicSuper"
         android:layout_width="193dp"
         android:layout_height="21dp"
+        android:clickable="true"
         android:fontFamily="@font/fuente_dyd"
         android:gravity="center"
         android:text="Supervivencia (Sab)"
@@ -365,7 +382,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline52" />
 
     <TextView
-        android:id="@+id/textView36"
+        android:id="@+id/textViewClicTAnim"
         android:layout_width="193dp"
         android:layout_height="21dp"
         android:fontFamily="@font/fuente_dyd"
@@ -376,7 +393,8 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline56"
         app:layout_constraintEnd_toStartOf="@+id/guideline54"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline55" />
+        app:layout_constraintTop_toTopOf="@+id/guideline55"
+        android:clickable="true" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline53"
