@@ -85,7 +85,134 @@ public class JugadorHabilidades extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        cliAtle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+                intent.putExtra("mod", textAtle.getText().toString());
+                startActivity(intent);
+            }
+        });
+        cliCArca.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+                intent.putExtra("mod", textCArca.getText().toString());
+                startActivity(intent);
+            }
+        });
+        cliEnga.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+                intent.putExtra("mod", textEnga.getText().toString());
+                startActivity(intent);
+            }
+        });
+        cliHisto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+                intent.putExtra("mod", textHisto.getText().toString());
+                startActivity(intent);
+            }
+        });
+        cliInter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+                intent.putExtra("mod", textInter.getText().toString());
+                startActivity(intent);
+            }
+        });
+        cliInves.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+                intent.putExtra("mod", textInves.getText().toString());
+                startActivity(intent);
+            }
+        });
+        cliJueM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+                intent.putExtra("mod", textJueM.getText().toString());
+                startActivity(intent);
+            }
+        });
+        cliMedic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+                intent.putExtra("mod", textMedicina.getText().toString());
+                startActivity(intent);
+            }
+        });
+        cliNatu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+                intent.putExtra("mod", textNatu.getText().toString());
+                startActivity(intent);
+            }
+        });
+        cliPerc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+                intent.putExtra("mod", textPerc.getText().toString());
+                startActivity(intent);
+            }
+        });
+        cliPers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+                intent.putExtra("mod", textPers.getText().toString());
+                startActivity(intent);
+            }
+        });
+        cliPersu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+                intent.putExtra("mod", textPersu.getText().toString());
+                startActivity(intent);
+            }
+        });
+        cliRel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+                intent.putExtra("mod", textRel.getText().toString());
+                startActivity(intent);
+            }
+        });
+        cliSigil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+                intent.putExtra("mod", textSigi.getText().toString());
+                startActivity(intent);
+            }
+        });
+        cliSuper.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+                intent.putExtra("mod", textSuper.getText().toString());
+                startActivity(intent);
+            }
+        });
+        cliTAm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+                intent.putExtra("mod", textTAm.getText().toString());
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -252,23 +379,23 @@ public class JugadorHabilidades extends AppCompatActivity {
     private void paqueteClicables(){
 
         cliAcr = findViewById(R.id.textViewClicAcro);
-        cliAtle = findViewById(R.id.textViewClicAcro);
-        cliCArca = findViewById(R.id.textViewClicAcro);
-        cliEnga = findViewById(R.id.textViewClicAcro);
-        cliHisto = findViewById(R.id.textViewClicAcro);
-        cliInter = findViewById(R.id.textViewClicAcro);
-        cliIntimi = findViewById(R.id.textViewClicAcro);
-        cliInves = findViewById(R.id.textViewClicAcro);
-        cliJueM = findViewById(R.id.textViewClicAcro);
-        cliMedic = findViewById(R.id.textViewClicAcro);
-        cliNatu = findViewById(R.id.textViewClicAcro);
-        cliPerc = findViewById(R.id.textViewClicAcro);
-        cliPers = findViewById(R.id.textViewClicAcro);
-        cliPersu = findViewById(R.id.textViewClicAcro);
-        cliRel = findViewById(R.id.textViewClicAcro);
-        cliSigil = findViewById(R.id.textViewClicAcro);
-        cliSuper = findViewById(R.id.textViewClicAcro);
-        cliTAm = findViewById(R.id.textViewClicAcro);
+        cliAtle = findViewById(R.id.textViewClicAtle);
+        cliCArca = findViewById(R.id.textViewClicCArc);
+        cliEnga = findViewById(R.id.textViewClicEnga);
+        cliHisto = findViewById(R.id.textViewClicHisto);
+        cliInter = findViewById(R.id.textViewClicInter);
+        cliIntimi = findViewById(R.id.textViewClicIntimi);
+        cliInves = findViewById(R.id.textViewClicInves);
+        cliJueM = findViewById(R.id.textViewClicJManos);
+        cliMedic = findViewById(R.id.textViewClicMedi);
+        cliNatu = findViewById(R.id.textViewClicNatu);
+        cliPerc = findViewById(R.id.textViewClicPerc);
+        cliPers = findViewById(R.id.textViewClicPers);
+        cliPersu = findViewById(R.id.textViewClicPersu);
+        cliRel = findViewById(R.id.textViewClicRel);
+        cliSigil = findViewById(R.id.textViewClicSigil);
+        cliSuper = findViewById(R.id.textViewClicSuper);
+        cliTAm = findViewById(R.id.textViewClicTAnim);
 
     }
 
