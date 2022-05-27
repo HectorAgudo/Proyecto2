@@ -15,7 +15,7 @@ import androidx.annotation.Nullable;
 
 public class PopupDados extends Activity {
 
-    TextView textTirada;
+    TextView textTirada, textTipoTirada;
     ImageView imgDado;
     MediaPlayer mp;
 
@@ -24,6 +24,7 @@ public class PopupDados extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dice_popup);
         setTitle("Tirada");
+        textTipoTirada = findViewById(R.id.textViewTipoTirada);
         textTirada = findViewById(R.id.textViewTirada);
         imgDado = findViewById(R.id.imageViewDado);
         mp = MediaPlayer.create(this,R.raw.dadostirar);
@@ -31,9 +32,11 @@ public class PopupDados extends Activity {
         @SuppressLint("ResourceType") Animator set = (Animator) AnimatorInflater.loadAnimator(PopupDados.this,R.anim.flip);
         set.setTarget(imgDado);
         set.start();
-        int tirada = (int) (Math.random()*(20));
+        int tirada = (int) (Math.random()*(20)+1);
         eleccionDado(tirada);
         String bon = getIntent().getStringExtra("mod");
+        String tipoTirada = getIntent().getStringExtra("tipoTirada");
+        textTipoTirada.setText(tipoTirada);
         textTirada.setText("Tu tirada a sido de " + tirada + " y tu bonificador es de " + bon + " sumas : " + (tirada+Integer.parseInt(bon)));
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);

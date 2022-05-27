@@ -17,10 +17,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline71"
         app:layout_constraintEnd_toStartOf="@+id/guideline68"
-        app:layout_constraintHorizontal_bias="0.187"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="@+id/guideline67"
         app:layout_constraintTop_toTopOf="@+id/guideline70"
-        app:layout_constraintVertical_bias="0.12" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline67"
@@ -41,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="38dp" />
+        app:layout_constraintGuide_begin="39dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline71"
@@ -68,4 +68,19 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="392dp" />
+
+    <TextView
+        android:id="@+id/textViewTipoTirada"
+        android:layout_width="298dp"
+        android:layout_height="37dp"
+        android:fontFamily="@font/fuente_dyd"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline70"
+        app:layout_constraintEnd_toStartOf="@+id/guideline68"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="@+id/guideline67"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

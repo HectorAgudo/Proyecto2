@@ -96,10 +96,10 @@ public class JugadorVida extends AppCompatActivity {
                 //boolean inspiracion = switchInspiracion
                 HashMap map = new HashMap();
                 map.put("vidaMax", vidaMax);
-                map.put("vidaaActu", vidaActual);
+                map.put("vidaActu", vidaActual);
                 map.put("CA", claseArmadura);
                 map.put("velocidad", velocidad);
-                databaseReference.child('"'+String.valueOf(uid)+'"').child("Personaje").child("vida").updateChildren(map);
+                databaseReference.child('"'+String.valueOf(uid)+'"').child("Personaje").child("Vida").updateChildren(map);
             }
         });
 
@@ -161,12 +161,12 @@ public class JugadorVida extends AppCompatActivity {
 
             }
         });
-        databaseReference.child("Personaje").child("Atributos").addValueEventListener(new ValueEventListener() {
+        databaseReference.child('"'+String.valueOf(uid)+'"').child("Personaje").child("Atributos").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
                     int iniciativaValor = JugadorAtributos.calcularModificador(Integer.parseInt(snapshot.child("destreza").getValue().toString()));
-                    textIniciativa.setText(iniciativaValor+"'");
+                    textIniciativa.setText("+ "+iniciativaValor);
                 }
 
             }
@@ -176,7 +176,26 @@ public class JugadorVida extends AppCompatActivity {
 
             }
         });
+        databaseReference.child('"'+String.valueOf(uid)+'"').child("Personaje").child("Vida").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    String vidaMax = snapshot.child("vidaMax").getValue().toString();
+                    editVidaMax.setText(vidaMax);
+                    String vidaActu = snapshot.child("vidaActu").getValue().toString();
+                    editVidaActual.setText(vidaActu);
+                    String CA = snapshot.child("CA").getValue().toString();
+                    editCA.setText(CA);
+                    String velocidad = snapshot.child("velocidad").getValue().toString();
+                    editVelocidad.setText(velocidad);
+                }
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
 }

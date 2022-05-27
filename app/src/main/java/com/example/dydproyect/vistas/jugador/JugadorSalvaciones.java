@@ -89,6 +89,7 @@ public class JugadorSalvaciones extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent =new Intent(JugadorSalvaciones.this, PopupDados.class);
                 intent.putExtra("mod", salFue.getText().toString());
+                intent.putExtra("tipoTirada","Sal.Fuerza");
                 startActivity(intent);
             }
         });
@@ -97,6 +98,7 @@ public class JugadorSalvaciones extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent =new Intent(JugadorSalvaciones.this, PopupDados.class);
                 intent.putExtra("mod", salDes.getText().toString());
+                intent.putExtra("tipoTirada","Sal.Destreza");
                 startActivity(intent);
             }
         });
@@ -105,6 +107,7 @@ public class JugadorSalvaciones extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent =new Intent(JugadorSalvaciones.this, PopupDados.class);
                 intent.putExtra("mod", salCon.getText().toString());
+                intent.putExtra("tipoTirada","Sal.Constitucion");
                 startActivity(intent);
             }
         });
@@ -113,6 +116,7 @@ public class JugadorSalvaciones extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent =new Intent(JugadorSalvaciones.this, PopupDados.class);
                 intent.putExtra("mod", salInt.getText().toString());
+                intent.putExtra("tipoTirada","Sal.Inteligencia");
                 startActivity(intent);
             }
         });
@@ -121,6 +125,7 @@ public class JugadorSalvaciones extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent =new Intent(JugadorSalvaciones.this, PopupDados.class);
                 intent.putExtra("mod", salSab.getText().toString());
+                intent.putExtra("tipoTirada","Sal.Sabiduria");
                 startActivity(intent);
             }
         });
@@ -129,6 +134,7 @@ public class JugadorSalvaciones extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent =new Intent(JugadorSalvaciones.this, PopupDados.class);
                 intent.putExtra("mod", salCar.getText().toString());
+                intent.putExtra("tipoTirada","Sal.Carisma");
                 startActivity(intent);
             }
         });

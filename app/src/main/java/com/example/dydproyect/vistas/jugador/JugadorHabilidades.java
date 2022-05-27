@@ -82,6 +82,7 @@ public class JugadorHabilidades extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
                 intent.putExtra("mod", textAcr.getText().toString());
+                intent.putExtra("tipoTirada","Acrobacias");
                 startActivity(intent);
             }
         });
@@ -90,6 +91,7 @@ public class JugadorHabilidades extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
                 intent.putExtra("mod", textAtle.getText().toString());
+                intent.putExtra("tipoTirada","Atletismo");
                 startActivity(intent);
             }
         });
@@ -98,6 +100,7 @@ public class JugadorHabilidades extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
                 intent.putExtra("mod", textCArca.getText().toString());
+                intent.putExtra("tipoTirada","C.Arcano");
                 startActivity(intent);
             }
         });
@@ -106,6 +109,7 @@ public class JugadorHabilidades extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
                 intent.putExtra("mod", textEnga.getText().toString());
+                intent.putExtra("tipoTirada","Engaño");
                 startActivity(intent);
             }
         });
@@ -114,6 +118,7 @@ public class JugadorHabilidades extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
                 intent.putExtra("mod", textHisto.getText().toString());
+                intent.putExtra("tipoTirada","Historia");
                 startActivity(intent);
             }
         });
@@ -122,6 +127,7 @@ public class JugadorHabilidades extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
                 intent.putExtra("mod", textInter.getText().toString());
+                intent.putExtra("tipoTirada","Interpretacion");
                 startActivity(intent);
             }
         });
@@ -130,6 +136,7 @@ public class JugadorHabilidades extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
                 intent.putExtra("mod", textInves.getText().toString());
+                intent.putExtra("tipoTirada","Investigacion");
                 startActivity(intent);
             }
         });
@@ -138,6 +145,7 @@ public class JugadorHabilidades extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
                 intent.putExtra("mod", textJueM.getText().toString());
+                intent.putExtra("tipoTirada","Juego de Manos");
                 startActivity(intent);
             }
         });
@@ -146,6 +154,7 @@ public class JugadorHabilidades extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
                 intent.putExtra("mod", textMedicina.getText().toString());
+                intent.putExtra("tipoTirada","Medicina");
                 startActivity(intent);
             }
         });
@@ -154,6 +163,7 @@ public class JugadorHabilidades extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
                 intent.putExtra("mod", textNatu.getText().toString());
+                intent.putExtra("tipoTirada","Naturaleza");
                 startActivity(intent);
             }
         });
@@ -162,6 +172,7 @@ public class JugadorHabilidades extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
                 intent.putExtra("mod", textPerc.getText().toString());
+                intent.putExtra("tipoTirada","Percepcion");
                 startActivity(intent);
             }
         });
@@ -170,6 +181,7 @@ public class JugadorHabilidades extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
                 intent.putExtra("mod", textPers.getText().toString());
+                intent.putExtra("tipoTirada","Perspicacia");
                 startActivity(intent);
             }
         });
@@ -178,6 +190,7 @@ public class JugadorHabilidades extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
                 intent.putExtra("mod", textPersu.getText().toString());
+                intent.putExtra("tipoTirada","Persuasion");
                 startActivity(intent);
             }
         });
@@ -186,6 +199,7 @@ public class JugadorHabilidades extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
                 intent.putExtra("mod", textRel.getText().toString());
+                intent.putExtra("tipoTirada","Religion");
                 startActivity(intent);
             }
         });
@@ -194,6 +208,7 @@ public class JugadorHabilidades extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
                 intent.putExtra("mod", textSigi.getText().toString());
+                intent.putExtra("tipoTirada","Sigilo");
                 startActivity(intent);
             }
         });
@@ -202,6 +217,7 @@ public class JugadorHabilidades extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
                 intent.putExtra("mod", textSuper.getText().toString());
+                intent.putExtra("tipoTirada","Supervivencia");
                 startActivity(intent);
             }
         });
@@ -210,6 +226,7 @@ public class JugadorHabilidades extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
                 intent.putExtra("mod", textTAm.getText().toString());
+                intent.putExtra("tipoTirada","T.Animales");
                 startActivity(intent);
             }
         });

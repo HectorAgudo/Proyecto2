@@ -168,7 +168,7 @@
 
     <TextView
         android:id="@+id/textViewFuerSal"
-        android:layout_width="69dp"
+        android:layout_width="100dp"
         android:layout_height="61dp"
         android:layout_margin="1dp"
         android:gravity="center"
@@ -182,7 +182,7 @@
 
     <TextView
         android:id="@+id/textViewDesSal"
-        android:layout_width="69dp"
+        android:layout_width="100dp"
         android:layout_height="61dp"
         android:layout_margin="1dp"
         android:gravity="center"
@@ -196,7 +196,7 @@
 
     <TextView
         android:id="@+id/textViewConSal"
-        android:layout_width="69dp"
+        android:layout_width="100dp"
         android:layout_height="61dp"
         android:layout_margin="1dp"
         android:gravity="center"
@@ -210,7 +210,7 @@
 
     <TextView
         android:id="@+id/textViewIntSal"
-        android:layout_width="69dp"
+        android:layout_width="100dp"
         android:layout_height="61dp"
         android:layout_margin="1dp"
         android:gravity="center"
@@ -224,7 +224,7 @@
 
     <TextView
         android:id="@+id/textViewSabSal"
-        android:layout_width="69dp"
+        android:layout_width="100dp"
         android:layout_height="61dp"
         android:layout_margin="1dp"
         android:gravity="center"
@@ -238,7 +238,7 @@
 
     <TextView
         android:id="@+id/textViewCarSal"
-        android:layout_width="69dp"
+        android:layout_width="100dp"
         android:layout_height="61dp"
         android:layout_margin="1dp"
         android:gravity="center"
