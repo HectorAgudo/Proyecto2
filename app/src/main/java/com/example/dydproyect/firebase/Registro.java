@@ -49,20 +49,20 @@ public class Registro extends AppCompatActivity {
         String password = etRegPassword.getText().toString();
 
         if (TextUtils.isEmpty(email)){
-            etRegEmail.setError("Email cannot be empty");
+            etRegEmail.setError("Email No puede estar vacio");
             etRegEmail.requestFocus();
         }else if (TextUtils.isEmpty(password)){
-            etRegPassword.setError("Password cannot be empty");
+            etRegPassword.setError("Contraseña no puede estar vacia");
             etRegPassword.requestFocus();
         }else{
             mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()){
-                        Toast.makeText(Registro.this, "User registered successfully", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Registro.this, "Usuario registrado", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(Registro.this, Logeo.class));
                     }else{
-                        Toast.makeText(Registro.this, "Registration Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Registro.this, "Error en el registro: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }
             });

@@ -18,6 +18,7 @@ public class PopupDados extends Activity {
     ImageView imgDado;
     MediaPlayer mp;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -49,20 +49,20 @@ public class Logeo extends AppCompatActivity {
         String password = etLoginPassword.getText().toString();
 
         if (TextUtils.isEmpty(email)){
-            etLoginEmail.setError("Email cannot be empty");
+            etLoginEmail.setError("Email no puede estar vacio");
             etLoginEmail.requestFocus();
         }else if (TextUtils.isEmpty(password)){
-            etLoginPassword.setError("Password cannot be empty");
+            etLoginPassword.setError("Contraseña no puede estar vacia");
             etLoginPassword.requestFocus();
         }else{
             mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()){
-                        Toast.makeText(Logeo.this, "User logged in successfully", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Logeo.this, "Usuario logeado correctamente", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(Logeo.this, MainActivity.class));
                     }else{
-                        Toast.makeText(Logeo.this, "Log in Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Logeo.this, "Log error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }
             });
