@@ -76,50 +76,27 @@ public class JugadorNombre extends AppCompatActivity implements AdapterView.OnIt
         //deCero();
         listarPj();
 
-        btnVida.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                irVida();
-            }
-        });
-        btnAtributos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                irAtributos();
-            }
-        });
-        btnHabilidades.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                irHabilidades();
-            }
-        });
-        btnSalvaciones.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                irSalvaciones();
-            }
-        });
+        btnVida.setOnClickListener(view -> irVida());
+        btnAtributos.setOnClickListener(view -> irAtributos());
+        btnHabilidades.setOnClickListener(view -> irHabilidades());
+        btnSalvaciones.setOnClickListener(view -> irSalvaciones());
 
-        btnActualizar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        btnActualizar.setOnClickListener(view -> {
 
-                int nivel = calcularNivel(Integer.parseInt(editPuntosExp.getText().toString()));
-                String nombre = editNombre.getText().toString();
-                String pExp = editPuntosExp.getText().toString();
-                String claseElegida = (String) spinerClase.getSelectedItem();
-                String razaElegida = (String) spinerRazas.getSelectedItem();
-                String alinemientoElegido = (String) spinerAlineamiento.getSelectedItem();
-                HashMap map = new HashMap();
-                map.put("nombre", nombre);
-                map.put("exp", pExp);
-                map.put("nivel",nivel);
-                map.put("clase", claseElegida);
-                map.put("raza", razaElegida);
-                map.put("alineamiento", alinemientoElegido);
-                databaseReference.child('"'+String.valueOf(uid)+'"').child("Personaje").updateChildren(map);
-            }
+            int nivel = calcularNivel(Integer.parseInt(editPuntosExp.getText().toString()));
+            String nombre = editNombre.getText().toString();
+            String pExp = editPuntosExp.getText().toString();
+            String claseElegida = (String) spinerClase.getSelectedItem();
+            String razaElegida = (String) spinerRazas.getSelectedItem();
+            String alinemientoElegido = (String) spinerAlineamiento.getSelectedItem();
+            HashMap map = new HashMap();
+            map.put("nombre", nombre);
+            map.put("exp", pExp);
+            map.put("nivel",nivel);
+            map.put("clase", claseElegida);
+            map.put("raza", razaElegida);
+            map.put("alineamiento", alinemientoElegido);
+            databaseReference.child('"'+String.valueOf(uid)+'"').child("Personaje").updateChildren(map);
         });
 
     }
@@ -188,9 +165,9 @@ public class JugadorNombre extends AppCompatActivity implements AdapterView.OnIt
             nivel = 15;
         }else if (pExp >=195000 && pExp <= 224999){
             nivel = 16;
-        }else if (pExp >=225000 && pExp <= 224999){
+        }else if (pExp >=225000 && pExp <= 264999){
             nivel = 17;
-        }else if (pExp >=265000 && pExp <= 264999){
+        }else if (pExp >=265000 && pExp <= 304999){
             nivel = 18;
         }else if (pExp >=305000 && pExp <= 354999){
             nivel = 19;
@@ -267,7 +244,7 @@ public class JugadorNombre extends AppCompatActivity implements AdapterView.OnIt
     private void seleccionarAlineamiento(){
 
         spinerAlineamiento.setOnItemSelectedListener(this);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, listaAlineamientos);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listaAlineamientos);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinerAlineamiento.setAdapter(adapter);
 
@@ -276,7 +253,7 @@ public class JugadorNombre extends AppCompatActivity implements AdapterView.OnIt
     private void seleccionarRaza(){
 
         spinerRazas.setOnItemSelectedListener(this);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, listaRazas);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listaRazas);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinerRazas.setAdapter(adapter);
 
@@ -285,7 +262,7 @@ public class JugadorNombre extends AppCompatActivity implements AdapterView.OnIt
     private void seleccionarClase(){
 
         spinerClase.setOnItemSelectedListener(this);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, listaClases);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listaClases);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinerClase.setAdapter(adapter);
 

@@ -70,49 +70,26 @@ public class JugadorAtributos  extends AppCompatActivity {
         modCarisma = findViewById(R.id.textViewCarAtri);
 
 
-        btnVida.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                irVida();
-            }
-        });
-        btnNombre.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                irNombre();
-            }
-        });
-        btnHabilidades.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                irHabilidades();
-            }
-        });
-        btnSalvaciones.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                irSalvaciones();
-            }
-        });
-        btnActualizar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int fuerza = Integer.parseInt(editFuerza.getText().toString().trim());
-                int destreza = Integer.parseInt(editDestreza.getText().toString().trim());
-                int constitucion = Integer.parseInt(editConstitucion.getText().toString().trim());
-                int inteligencia = Integer.parseInt(editInteligencia.getText().toString().trim());
-                int sabiduria = Integer.parseInt(editSabiduria.getText().toString().trim());
-                int carisma = Integer.parseInt(editCarisma.getText().toString().trim());
-                HashMap map = new HashMap();
-                map.put("fuerza",fuerza);
-                map.put("destreza",destreza);
-                map.put("constitucion",constitucion);
-                map.put("inteligencia",inteligencia);
-                map.put("sabiduria",sabiduria);
-                map.put("carisma",carisma);
-                databaseReference.child('"'+String.valueOf(uid)+'"').child("Personaje").child("Atributos").updateChildren(map);
+        btnVida.setOnClickListener(view -> irVida());
+        btnNombre.setOnClickListener(view -> irNombre());
+        btnHabilidades.setOnClickListener(view -> irHabilidades());
+        btnSalvaciones.setOnClickListener(view -> irSalvaciones());
+        btnActualizar.setOnClickListener(view -> {
+            int fuerza = Integer.parseInt(editFuerza.getText().toString().trim());
+            int destreza = Integer.parseInt(editDestreza.getText().toString().trim());
+            int constitucion = Integer.parseInt(editConstitucion.getText().toString().trim());
+            int inteligencia = Integer.parseInt(editInteligencia.getText().toString().trim());
+            int sabiduria = Integer.parseInt(editSabiduria.getText().toString().trim());
+            int carisma = Integer.parseInt(editCarisma.getText().toString().trim());
+            HashMap map = new HashMap();
+            map.put("fuerza",fuerza);
+            map.put("destreza",destreza);
+            map.put("constitucion",constitucion);
+            map.put("inteligencia",inteligencia);
+            map.put("sabiduria",sabiduria);
+            map.put("carisma",carisma);
+            databaseReference.child('"'+String.valueOf(uid)+'"').child("Personaje").child("Atributos").updateChildren(map);
 
-            }
         });
 
     }

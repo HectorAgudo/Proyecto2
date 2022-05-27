@@ -52,183 +52,112 @@ public class JugadorHabilidades extends AppCompatActivity {
 
         listarHabilidades();
 
-        btnVida.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                irVida();
-            }
-        });
-        btnAtributos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                irAtributos();
-            }
-        });
-        btnNombre.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                irNombre();
-            }
-        });
-        btnSalvaciones.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                irSalvaciones();
-            }
-        });
+        btnVida.setOnClickListener(view -> irVida());
+        btnAtributos.setOnClickListener(view -> irAtributos());
+        btnNombre.setOnClickListener(view -> irNombre());
+        btnSalvaciones.setOnClickListener(view -> irSalvaciones());
 
-        cliAcr.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
-                intent.putExtra("mod", textAcr.getText().toString());
-                intent.putExtra("tipoTirada","Acrobacias");
-                startActivity(intent);
-            }
+        cliAcr.setOnClickListener(view -> {
+            Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+            intent.putExtra("mod", textAcr.getText().toString());
+            intent.putExtra("tipoTirada","Acrobacias");
+            startActivity(intent);
         });
-        cliAtle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
-                intent.putExtra("mod", textAtle.getText().toString());
-                intent.putExtra("tipoTirada","Atletismo");
-                startActivity(intent);
-            }
+        cliAtle.setOnClickListener(view -> {
+            Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+            intent.putExtra("mod", textAtle.getText().toString());
+            intent.putExtra("tipoTirada","Atletismo");
+            startActivity(intent);
         });
-        cliCArca.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
-                intent.putExtra("mod", textCArca.getText().toString());
-                intent.putExtra("tipoTirada","C.Arcano");
-                startActivity(intent);
-            }
+        cliCArca.setOnClickListener(view -> {
+            Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+            intent.putExtra("mod", textCArca.getText().toString());
+            intent.putExtra("tipoTirada","C.Arcano");
+            startActivity(intent);
         });
-        cliEnga.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
-                intent.putExtra("mod", textEnga.getText().toString());
-                intent.putExtra("tipoTirada","Engaño");
-                startActivity(intent);
-            }
+        cliEnga.setOnClickListener(view -> {
+            Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+            intent.putExtra("mod", textEnga.getText().toString());
+            intent.putExtra("tipoTirada","Engaño");
+            startActivity(intent);
         });
-        cliHisto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
-                intent.putExtra("mod", textHisto.getText().toString());
-                intent.putExtra("tipoTirada","Historia");
-                startActivity(intent);
-            }
+        cliHisto.setOnClickListener(view -> {
+            Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+            intent.putExtra("mod", textHisto.getText().toString());
+            intent.putExtra("tipoTirada","Historia");
+            startActivity(intent);
         });
-        cliInter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
-                intent.putExtra("mod", textInter.getText().toString());
-                intent.putExtra("tipoTirada","Interpretacion");
-                startActivity(intent);
-            }
+        cliInter.setOnClickListener(view -> {
+            Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+            intent.putExtra("mod", textInter.getText().toString());
+            intent.putExtra("tipoTirada","Interpretacion");
+            startActivity(intent);
         });
-        cliInves.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
-                intent.putExtra("mod", textInves.getText().toString());
-                intent.putExtra("tipoTirada","Investigacion");
-                startActivity(intent);
-            }
+        cliInves.setOnClickListener(view -> {
+            Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+            intent.putExtra("mod", textInves.getText().toString());
+            intent.putExtra("tipoTirada","Investigacion");
+            startActivity(intent);
         });
-        cliJueM.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
-                intent.putExtra("mod", textJueM.getText().toString());
-                intent.putExtra("tipoTirada","Juego de Manos");
-                startActivity(intent);
-            }
+        cliJueM.setOnClickListener(view -> {
+            Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+            intent.putExtra("mod", textJueM.getText().toString());
+            intent.putExtra("tipoTirada","Juego de Manos");
+            startActivity(intent);
         });
-        cliMedic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
-                intent.putExtra("mod", textMedicina.getText().toString());
-                intent.putExtra("tipoTirada","Medicina");
-                startActivity(intent);
-            }
+        cliMedic.setOnClickListener(view -> {
+            Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+            intent.putExtra("mod", textMedicina.getText().toString());
+            intent.putExtra("tipoTirada","Medicina");
+            startActivity(intent);
         });
-        cliNatu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
-                intent.putExtra("mod", textNatu.getText().toString());
-                intent.putExtra("tipoTirada","Naturaleza");
-                startActivity(intent);
-            }
+        cliNatu.setOnClickListener(view -> {
+            Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+            intent.putExtra("mod", textNatu.getText().toString());
+            intent.putExtra("tipoTirada","Naturaleza");
+            startActivity(intent);
         });
-        cliPerc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
-                intent.putExtra("mod", textPerc.getText().toString());
-                intent.putExtra("tipoTirada","Percepcion");
-                startActivity(intent);
-            }
+        cliPerc.setOnClickListener(view -> {
+            Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+            intent.putExtra("mod", textPerc.getText().toString());
+            intent.putExtra("tipoTirada","Percepcion");
+            startActivity(intent);
         });
-        cliPers.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
-                intent.putExtra("mod", textPers.getText().toString());
-                intent.putExtra("tipoTirada","Perspicacia");
-                startActivity(intent);
-            }
+        cliPers.setOnClickListener(view -> {
+            Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+            intent.putExtra("mod", textPers.getText().toString());
+            intent.putExtra("tipoTirada","Perspicacia");
+            startActivity(intent);
         });
-        cliPersu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
-                intent.putExtra("mod", textPersu.getText().toString());
-                intent.putExtra("tipoTirada","Persuasion");
-                startActivity(intent);
-            }
+        cliPersu.setOnClickListener(view -> {
+            Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+            intent.putExtra("mod", textPersu.getText().toString());
+            intent.putExtra("tipoTirada","Persuasion");
+            startActivity(intent);
         });
-        cliRel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
-                intent.putExtra("mod", textRel.getText().toString());
-                intent.putExtra("tipoTirada","Religion");
-                startActivity(intent);
-            }
+        cliRel.setOnClickListener(view -> {
+            Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+            intent.putExtra("mod", textRel.getText().toString());
+            intent.putExtra("tipoTirada","Religion");
+            startActivity(intent);
         });
-        cliSigil.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
-                intent.putExtra("mod", textSigi.getText().toString());
-                intent.putExtra("tipoTirada","Sigilo");
-                startActivity(intent);
-            }
+        cliSigil.setOnClickListener(view -> {
+            Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+            intent.putExtra("mod", textSigi.getText().toString());
+            intent.putExtra("tipoTirada","Sigilo");
+            startActivity(intent);
         });
-        cliSuper.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
-                intent.putExtra("mod", textSuper.getText().toString());
-                intent.putExtra("tipoTirada","Supervivencia");
-                startActivity(intent);
-            }
+        cliSuper.setOnClickListener(view -> {
+            Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+            intent.putExtra("mod", textSuper.getText().toString());
+            intent.putExtra("tipoTirada","Supervivencia");
+            startActivity(intent);
         });
-        cliTAm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
-                intent.putExtra("mod", textTAm.getText().toString());
-                intent.putExtra("tipoTirada","T.Animales");
-                startActivity(intent);
-            }
+        cliTAm.setOnClickListener(view -> {
+            Intent intent = new Intent(JugadorHabilidades.this, PopupDados.class);
+            intent.putExtra("mod", textTAm.getText().toString());
+            intent.putExtra("tipoTirada","T.Animales");
+            startActivity(intent);
         });
 
     }
@@ -320,7 +249,7 @@ public class JugadorHabilidades extends AppCompatActivity {
                     } else {
                         textMedicina.setText("+" + bonSabiduria);
                     }
-                    if (claseElegida.equals("Explorador") || claseElegida.equals("Barbaro") || claseElegida.equals("Explorador")){
+                    if (claseElegida.equals("Explorador") || claseElegida.equals("Barbaro")){
                         textNatu.setText("+" +(bonInteligencia+bonCom));
                     } else {
                         textNatu.setText("+" + bonInteligencia);

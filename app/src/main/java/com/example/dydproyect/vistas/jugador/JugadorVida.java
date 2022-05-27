@@ -62,45 +62,22 @@ public class JugadorVida extends AppCompatActivity {
 
         listarVida();
 
-        btnNombre.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                irNombre();
-            }
-        });
-        btnAtributos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                irAtributos();
-            }
-        });
-        btnHabilidades.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                irHabilidades();
-            }
-        });
-        btnSalvaciones.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                irSalvaciones();
-            }
-        });
-        btnActualizar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int vidaMax = Integer.parseInt((editVidaMax.getText().toString()));
-                int vidaActual = Integer.parseInt((editVidaActual.getText().toString()));
-                int claseArmadura = Integer.parseInt((editCA.getText().toString()));
-                int velocidad = Integer.parseInt((editVelocidad.getText().toString()));
-                //boolean inspiracion = switchInspiracion
-                HashMap map = new HashMap();
-                map.put("vidaMax", vidaMax);
-                map.put("vidaActu", vidaActual);
-                map.put("CA", claseArmadura);
-                map.put("velocidad", velocidad);
-                databaseReference.child('"'+String.valueOf(uid)+'"').child("Personaje").child("Vida").updateChildren(map);
-            }
+        btnNombre.setOnClickListener(view -> irNombre());
+        btnAtributos.setOnClickListener(view -> irAtributos());
+        btnHabilidades.setOnClickListener(view -> irHabilidades());
+        btnSalvaciones.setOnClickListener(view -> irSalvaciones());
+        btnActualizar.setOnClickListener(view -> {
+            int vidaMax = Integer.parseInt((editVidaMax.getText().toString()));
+            int vidaActual = Integer.parseInt((editVidaActual.getText().toString()));
+            int claseArmadura = Integer.parseInt((editCA.getText().toString()));
+            int velocidad = Integer.parseInt((editVelocidad.getText().toString()));
+            //boolean inspiracion = switchInspiracion
+            HashMap map = new HashMap();
+            map.put("vidaMax", vidaMax);
+            map.put("vidaActu", vidaActual);
+            map.put("CA", claseArmadura);
+            map.put("velocidad", velocidad);
+            databaseReference.child('"'+String.valueOf(uid)+'"').child("Personaje").child("Vida").updateChildren(map);
         });
 
     }

@@ -58,85 +58,47 @@ public class JugadorSalvaciones extends AppCompatActivity {
         btnNombre = findViewById(R.id.buttonNomSal);
         listarSalvaciones();
 
-        btnVida.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                irVida();
-            }
-        });
-        btnAtributos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                irAtributos();
-            }
-        });
-        btnHabilidades.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                irHabilidades();
-            }
-        });
-        btnNombre.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                irNombre();
-            }
-        });
+        btnVida.setOnClickListener(view -> irVida());
+        btnAtributos.setOnClickListener(view -> irAtributos());
+        btnHabilidades.setOnClickListener(view -> irHabilidades());
+        btnNombre.setOnClickListener(view -> irNombre());
 
 
-        cliFue.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent =new Intent(JugadorSalvaciones.this, PopupDados.class);
-                intent.putExtra("mod", salFue.getText().toString());
-                intent.putExtra("tipoTirada","Sal.Fuerza");
-                startActivity(intent);
-            }
+        cliFue.setOnClickListener(view -> {
+            Intent intent =new Intent(JugadorSalvaciones.this, PopupDados.class);
+            intent.putExtra("mod", salFue.getText().toString());
+            intent.putExtra("tipoTirada","Sal.Fuerza");
+            startActivity(intent);
         });
-        cliDes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent =new Intent(JugadorSalvaciones.this, PopupDados.class);
-                intent.putExtra("mod", salDes.getText().toString());
-                intent.putExtra("tipoTirada","Sal.Destreza");
-                startActivity(intent);
-            }
+        cliDes.setOnClickListener(view -> {
+            Intent intent =new Intent(JugadorSalvaciones.this, PopupDados.class);
+            intent.putExtra("mod", salDes.getText().toString());
+            intent.putExtra("tipoTirada","Sal.Destreza");
+            startActivity(intent);
         });
-        cliCon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent =new Intent(JugadorSalvaciones.this, PopupDados.class);
-                intent.putExtra("mod", salCon.getText().toString());
-                intent.putExtra("tipoTirada","Sal.Constitucion");
-                startActivity(intent);
-            }
+        cliCon.setOnClickListener(view -> {
+            Intent intent =new Intent(JugadorSalvaciones.this, PopupDados.class);
+            intent.putExtra("mod", salCon.getText().toString());
+            intent.putExtra("tipoTirada","Sal.Constitucion");
+            startActivity(intent);
         });
-        cliInt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent =new Intent(JugadorSalvaciones.this, PopupDados.class);
-                intent.putExtra("mod", salInt.getText().toString());
-                intent.putExtra("tipoTirada","Sal.Inteligencia");
-                startActivity(intent);
-            }
+        cliInt.setOnClickListener(view -> {
+            Intent intent =new Intent(JugadorSalvaciones.this, PopupDados.class);
+            intent.putExtra("mod", salInt.getText().toString());
+            intent.putExtra("tipoTirada","Sal.Inteligencia");
+            startActivity(intent);
         });
-        cliSab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent =new Intent(JugadorSalvaciones.this, PopupDados.class);
-                intent.putExtra("mod", salSab.getText().toString());
-                intent.putExtra("tipoTirada","Sal.Sabiduria");
-                startActivity(intent);
-            }
+        cliSab.setOnClickListener(view -> {
+            Intent intent =new Intent(JugadorSalvaciones.this, PopupDados.class);
+            intent.putExtra("mod", salSab.getText().toString());
+            intent.putExtra("tipoTirada","Sal.Sabiduria");
+            startActivity(intent);
         });
-        cliCar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent =new Intent(JugadorSalvaciones.this, PopupDados.class);
-                intent.putExtra("mod", salCar.getText().toString());
-                intent.putExtra("tipoTirada","Sal.Carisma");
-                startActivity(intent);
-            }
+        cliCar.setOnClickListener(view -> {
+            Intent intent =new Intent(JugadorSalvaciones.this, PopupDados.class);
+            intent.putExtra("mod", salCar.getText().toString());
+            intent.putExtra("tipoTirada","Sal.Carisma");
+            startActivity(intent);
         });
 
     }
